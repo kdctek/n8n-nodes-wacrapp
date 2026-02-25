@@ -1,5 +1,5 @@
 {
-  "name": "n8n-nodes-wacrapp",
+  "name": "@kdctek/n8n-nodes-wacrapp",
   "version": "0.1.0",
   "description": "n8n community node for WAcr App – WhatsApp CRM & messaging platform",
   "keywords": [

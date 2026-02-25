@@ -1,5 +1,5 @@
 {
-  "node": "n8n-nodes-wacrapp.wacrApp",
+  "node": "@kdctek/n8n-nodes-wacrapp.wacrApp",
   "nodeVersion": "1.0",
   "codexVersion": "1.0",
   "categories": [
@@ -15,7 +15,7 @@
     ],
     "primaryDocumentation": [
       {
-        "url": "https://github.com/kdcinfotech/n8n-nodes-wacrapp"
+        "url": "https://github.com/kdctek/n8n-nodes-wacrapp"
       }
     ],
     "generic": [
