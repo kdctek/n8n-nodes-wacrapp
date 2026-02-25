@@ -1,0 +1,90 @@
+import type { INodeProperties } from 'n8n-workflow';
+
+export const statusOperations: INodeProperties[] = [
+	{
+		displayName: 'Operation',
+		name: 'operation',
+		type: 'options',
+		noDataExpression: true,
+		displayOptions: { show: { resource: ['status'] } },
+		options: [
+			{ name: 'Create', value: 'create', description: 'Create a new contact status', action: 'Create a status' },
+			{ name: 'Delete', value: 'delete', description: 'Delete a status', action: 'Delete a status' },
+			{ name: 'Get', value: 'get', description: 'Get a status by ID', action: 'Get a status' },
+			{ name: 'Get Many', value: 'getAll', description: 'Retrieve a list of statuses', action: 'Get many statuses' },
+			{ name: 'Update', value: 'update', description: 'Update a status', action: 'Update a status' },
+		],
+		default: 'getAll',
+	},
+];
+
+export const statusFields: INodeProperties[] = [
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+		displayOptions: { show: { resource: ['status'], operation: ['getAll'] } },
+	},
+	{
+		displayName: 'Limit',
+		name: 'limit',
+		type: 'number',
+		default: 50,
+		typeOptions: { minValue: 1, maxValue: 100 },
+		description: 'Max number of results to return',
+		displayOptions: { show: { resource: ['status'], operation: ['getAll'], returnAll: [false] } },
+	},
+	{
+		displayName: 'Search',
+		name: 'search',
+		type: 'string',
+		default: '',
+		description: 'Search by status name',
+		displayOptions: { show: { resource: ['status'], operation: ['getAll'] } },
+	},
+	{
+		displayName: 'Status ID',
+		name: 'statusId',
+		type: 'string',
+		required: true,
+		default: '',
+		description: 'The ID of the status',
+		displayOptions: { show: { resource: ['status'], operation: ['get', 'update', 'delete'] } },
+	},
+	{
+		displayName: 'Name',
+		name: 'name',
+		type: 'string',
+		required: true,
+		default: '',
+		description: 'Status name (must be unique per account)',
+		displayOptions: { show: { resource: ['status'], operation: ['create'] } },
+	},
+	{
+		displayName: 'Color',
+		name: 'color',
+		type: 'color',
+		default: '#25D366',
+		description: 'Display color for this status',
+		displayOptions: { show: { resource: ['status'], operation: ['create'] } },
+	},
+	{
+		displayName: 'Name',
+		name: 'name',
+		type: 'string',
+		required: true,
+		default: '',
+		description: 'New status name (must be unique per account)',
+		displayOptions: { show: { resource: ['status'], operation: ['update'] } },
+	},
+	{
+		displayName: 'Color',
+		name: 'color',
+		type: 'color',
+		default: '#25D366',
+		description: 'Display color for this status',
+		displayOptions: { show: { resource: ['status'], operation: ['update'] } },
+	},
+];

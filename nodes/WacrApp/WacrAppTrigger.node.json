@@ -1,0 +1,31 @@
+{
+  "node": "n8n-nodes-wacrapp.wacrAppTrigger",
+  "nodeVersion": "1.0",
+  "codexVersion": "1.0",
+  "categories": [
+    "Communication",
+    "Marketing",
+    "Sales"
+  ],
+  "resources": {
+    "credentialDocumentation": [
+      {
+        "url": "https://app.wa.cr/settings/api"
+      }
+    ],
+    "primaryDocumentation": [
+      {
+        "url": "https://github.com/kdcinfotech/n8n-nodes-wacrapp"
+      }
+    ]
+  },
+  "alias": [
+    "whatsapp trigger",
+    "new contact",
+    "new message",
+    "wacr trigger"
+  ],
+  "subcategories": {
+    "Communication": ["Messaging"]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "node": "n8n-nodes-wacrapp.wacrApp",
+  "nodeVersion": "1.0",
+  "codexVersion": "1.0",
+  "categories": [
+    "Communication",
+    "Marketing",
+    "Sales"
+  ],
+  "resources": {
+    "credentialDocumentation": [
+      {
+        "url": "https://app.wa.cr/settings/api"
+      }
+    ],
+    "primaryDocumentation": [
+      {
+        "url": "https://github.com/kdcinfotech/n8n-nodes-wacrapp"
+      }
+    ],
+    "generic": [
+      {
+        "label": "WAcr App – WhatsApp CRM",
+        "icon": "🟢",
+        "url": "https://wa.cr"
+      }
+    ]
+  },
+  "alias": [
+    "whatsapp",
+    "crm",
+    "contact",
+    "message",
+    "template",
+    "wacr"
+  ],
+  "subcategories": {
+    "Communication": ["Messaging"]
+  }
+}
