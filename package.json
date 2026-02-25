@@ -1,6 +1,6 @@
 {
   "name": "@kdctek/n8n-nodes-wacrapp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "n8n community node for WAcr App – WhatsApp CRM & messaging platform",
   "keywords": [
     "n8n-community-node-package",
@@ -22,7 +22,8 @@
   },
   "main": "index.js",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json && npm run copy:icons",
+    "copy:icons": "cp nodes/WacrApp/*.svg dist/nodes/WacrApp/ && cp nodes/WacrApp/*.json dist/nodes/WacrApp/",
     "dev": "tsc -p tsconfig.json --watch"
   },
   "files": [
