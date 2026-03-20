@@ -9,7 +9,7 @@ import type {
 } from 'n8n-workflow';
 import { NodeApiError } from 'n8n-workflow';
 
-export const API_BASE_URL = 'https://app.wa.cr/api/v2';
+export const DEFAULT_DOMAIN = 'https://app.wa.cr';
 export const CREDENTIAL_NAME = 'wacrApp';
 
 /**
@@ -22,9 +22,13 @@ export async function wacrApiRequest(
 	body: IDataObject = {},
 	qs: IDataObject = {},
 ): Promise<any> {
+	const credentials = await this.getCredentials(CREDENTIAL_NAME);
+	const domain = (credentials.domain as string) || DEFAULT_DOMAIN;
+	const baseUrl = `${domain.replace(/\/+$/, '')}/api/v2`;
+
 	const options: IHttpRequestOptions = {
 		method,
-		url: `${API_BASE_URL}${path}`,
+		url: `${baseUrl}${path}`,
 		headers: {
 			'Content-Type': 'application/json',
 			Accept: 'application/json',

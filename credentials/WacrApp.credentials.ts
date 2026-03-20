@@ -14,6 +14,14 @@ export class WacrApp implements ICredentialType {
 
 	properties: INodeProperties[] = [
 		{
+			displayName: 'Domain',
+			name: 'domain',
+			type: 'string',
+			default: 'https://app.wa.cr',
+			required: true,
+			description: 'The base domain of your WAcr App instance (e.g. https://app.wa.cr)',
+		},
+		{
 			displayName: 'API Token',
 			name: 'apiToken',
 			type: 'string',
@@ -35,7 +43,7 @@ export class WacrApp implements ICredentialType {
 
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: 'https://app.wa.cr/api/v2',
+			baseURL: '={{$credentials.domain}}/api/v2',
 			url: '/account',
 			method: 'GET',
 		},
